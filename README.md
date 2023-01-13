@@ -1,5 +1,5 @@
 # AWS-Tile-Generator
-Simple 3D Tile Generator for AWS Service Icons
+Simple 3D Tile Generator for AWS Service Icons using OpenSCAD
 
 
 # Usage
