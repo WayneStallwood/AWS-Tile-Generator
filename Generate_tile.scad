@@ -12,7 +12,11 @@ margin_height = 3;
 rounding_factor = 2;
 
 
+//Magnet options, for use on fridge or magnetic whiteboards
 
+magnet = true;
+mag_height = 1;
+mag_diameter = 8;
 
 
 $fn=50;
@@ -46,6 +50,8 @@ translate([text_height,text_centre,0]) rotate([0,0,90]) letter(text);
 margin_length_offset = (tile_length - (margin * 2));
 margin_width_offset = (tile_width - (margin * 2));
 margin_height_offset = (margin_height / 2);
+mag_x_pos = (tile_width / 2);
+mag_y_pos = (tile_length /2);
 
 difference () {
     minkowski() {
@@ -53,14 +59,22 @@ difference () {
         // rounded corners
         cylinder(r=rounding_factor,h=rounding_factor);
     }
-    translate([margin,margin,margin_height]) {
+    translate([mag_y_pos,mag_x_pos,0]) {
+      if (magnet) cylinder(r=mag_diameter,h=mag_height);
+     }
+    
+     translate([margin,margin,margin_height]) {
 
         minkowski() {
             cube([margin_length_offset,margin_width_offset,margin_height_offset]);
             // rounded corners
             cylinder(r=rounding_factor,h=rounding_factor);
         }
+        
+
     }
+    
+        
 }
 
 
@@ -78,7 +92,13 @@ module pyramidChildren(height){
  icon_x_pos = (tile_width /2);
  icon_resize = ((tile_length * 1.25)/2);
  
- translate([icon_y_pos,icon_x_pos,0]) rotate([0,0,90]) resize([icon_resize,0,letter_height], auto=true) {
-    pyramidChildren(letter_height)
+ difference () {
+ 
+    translate([icon_y_pos,icon_x_pos,0]) rotate([0,0,90]) resize([icon_resize,0,    letter_height], auto=true) {
+        pyramidChildren(letter_height)
         import(file = source_svg, center = true, dpi = 96);
+    }
+            translate([mag_y_pos,mag_x_pos,0]) {
+                if (magnet) cylinder(r=mag_diameter,h=mag_height);
+     }
  }
