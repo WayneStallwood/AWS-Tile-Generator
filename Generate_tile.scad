@@ -16,7 +16,7 @@ rounding_factor = 2;
 
 magnet = true;
 mag_height = 1;
-mag_diameter = 8;
+mag_diameter = 8.5;
 
 
 $fn=50;
@@ -52,6 +52,7 @@ margin_width_offset = (tile_width - (margin * 2));
 margin_height_offset = (margin_height / 2);
 mag_x_pos = (tile_width / 2);
 mag_y_pos = (tile_length /2);
+mag_radius = (mag_diameter /2);
 
 difference () {
     minkowski() {
@@ -60,7 +61,7 @@ difference () {
         cylinder(r=rounding_factor,h=rounding_factor);
     }
     translate([mag_y_pos,mag_x_pos,0]) {
-      if (magnet) cylinder(r=mag_diameter,h=mag_height);
+      if (magnet) cylinder(r=mag_radius,h=mag_height);
      }
     
      translate([margin,margin,margin_height]) {
