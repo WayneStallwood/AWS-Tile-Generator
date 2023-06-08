@@ -4,7 +4,7 @@ Simple 3D Tile Generator for AWS Service Icons using OpenSCAD
 
 # Usage
 
-The most common icons are already generated in the "samples" directory, note these DO NOT have the new magnet hole option, regenerate with the instructions below if you need that. or for a missing service
+The most common icons are already generated in the "samples" directory, note these DO NOT have the new magnet hole option, regenerate with the instructions below if you need that. or for a missing service. See tile_list.csv for the samples included.
 
 Simply download the AWS Icon Assets package from here:
 https://aws.amazon.com/architecture/icons/ and place the ZIP file in your working directory.
