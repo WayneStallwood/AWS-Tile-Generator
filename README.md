@@ -13,6 +13,8 @@ Unzip and adjust the parameters in OpenSCAD to point to the "64" version of the 
 
 The SVG files need a small modification to remove the rectangular background, you can either manually remove the background from the SVG in the "64" directory by removing the line from the SVG starting "<rect" in your favourite text editor or use the included Python to preprocess the file and automatically submit it into OpenSCAD
 
+There is also a multi-processor which will take batches of Tiles from a manifest csv and convert them
+
 (see Python usage insructions below)
 
 
@@ -33,3 +35,22 @@ python3 convert.py -f assets.zip -s Lambda -t Lambda
 The result will be added to the samples directory
 
 In some cases the autoprocesor may match more than one Icon, if so then please use more specific search terms (such as the full filename)
+
+
+# I have lots of tiles to generate !
+
+* Currently untested on Windows *
+
+python3 multi_convert.py -f [Assets File Zip] 
+Will generate a batch of tiles, as specified in the manifest (tile_list.csv)
+
+The CSV is in the header format  (title,search,colour)
+
+* Title is the Label for the tile
+
+* Search is the file search string for the service icon
+
+* Colour is a feature that adds a prefix to the generated tile, This is used to provide hints in the stl filename of the Tile colour to match the official icon colours by service (makes it a lot easier when printing them)
+
+The sample manifest creates the list of Tiles in the samples folder by default.
+This script will try and multithread OpenSCAD based on number of CPU cores you have, but results may vary.
