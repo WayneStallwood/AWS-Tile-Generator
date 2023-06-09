@@ -53,4 +53,4 @@ The CSV is in the header format  (title,search,colour)
 * Colour is a feature that adds a prefix to the generated tile, This is used to provide hints in the stl filename of the Tile colour to match the official icon colours by service (makes it a lot easier when printing them)
 
 The sample manifest creates the list of Tiles in the samples folder by default.
-This script will try and multithread OpenSCAD based on number of CPU cores you have, but results may vary.
+This script will multithread OpenSCAD based on number of CPU cores you have

@@ -1,3 +1,4 @@
+import subprocess
 import zipfile
 import os
 import fnmatch
@@ -24,9 +25,8 @@ def unzip(file):
         zip_ref.extractall(ICON_PATH)
 
 def exec_openscad(icon_file,title,prefix):
-    # I know I should be using subprocess.run here, but it kept munging the quoting scad needs
-    os.system(OPENSCAD_PATH+ """ -o samples/"""+prefix+title+""".stl -D 'source_svg = \""""+icon_file+"""\"' -D 'text = \""""+title+"""\"' Generate_tile.scad""")
-
+    # Uses subprocess.run to allow threading of SCAD without hitting the GIL 
+    subprocess.run([OPENSCAD_PATH, '-o', 'samples/'+prefix+title+'.stl', '-D source_svg = "'+icon_file+'"', '-D text = "'+title+'"', 'Generate_tile.scad'])
 
 def remove_rect(filename,title):
     with open(filename, "r", encoding='unicode_escape') as input:
