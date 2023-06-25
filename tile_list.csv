@@ -11,13 +11,14 @@ VMC,Arch_VMware-Cloud-on-AWS_64.svg,Orange_
 ECR,Arch_Amazon-Elastic-Container-Registry_64.svg,Orange_
 ECS,Arch_Amazon-Elastic-Container-Service_64.svg,Orange_
 EKS,Arch_Amazon-Elastic-Kubernetes-Service_64.svg,Orange_
+EKS-A,Arch_Amazon-EKS-Anywhere_64.svg,Orange_
+ECS-A,Arch_Amazon-ECS-Anywhere_64.svg,Orange_	
 S3,Arch_Amazon-Simple-Storage-Service_64,Green_
 Backup,Arch_AWS-Backup_64.svg,Green_
 EFS,Arch_Amazon-EFS_64.svg,Green_
 EBS,Arch_Amazon-Elastic-Block-Store_64.svg,Green_
 FSX-Lustre,Arch_Amazon-FSx-for-Lustre_64.svg,Green_
 DynamoDB,Dynamo,Blue_
-DMS,Arch_AWS-Database-Migration-Service_64.svg,Blue_
 Aurora,Arch_Amazon-Aurora_64.svg,Blue_
 Elasticache,Arch_Amazon-ElastiCache_64.svg,Blue_
 Neptune,Arch_Amazon-Neptune_64.svg,Blue_
@@ -47,3 +48,9 @@ Event-Bridge,Arch_Amazon-EventBridge_64.svg,Pink_
 App-Sync,Arch_AWS-AppSync_64.svg,Pink_
 SNS,Arch_Amazon-Simple-Notification-Service_64.svg,Pink_
 SQS,Arch_Amazon-Simple-Queue-Service_64.svg,Pink_
+CodePipeline,Arch_AWS-CodePipeline_64.svg,Blue2_
+CodeCommit,Arch_AWS-CodeCommit_64.svg,Blue2_
+CodeDeploy,Arch_AWS-CodeDeploy_64.svg,Blue2_
+CodeBuild,Arch_AWS-CodeBuild_64.svg,Blue2_
+X-Ray,Arch_AWS-X-Ray_64.svg,Blue2_
+Cloud9,Arch_AWS-Cloud9_64.svg,Blue2_
