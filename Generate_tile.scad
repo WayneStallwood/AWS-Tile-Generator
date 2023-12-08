@@ -8,7 +8,7 @@ tile_length = 45;
 tile_width = 35;
 tile_height = 3;
 margin = 1 ;
-margin_height = 3;
+margin_height = tile_height;
 rounding_factor = 2;
 
 
@@ -24,8 +24,11 @@ $fn=50;
 font = "Liberation Sans";
 
 letter_size = 4;
-letter_height = 5;
+letter_height = 2;
 
+// Round corners alter dimensions
+final_width  = (tile_width - (rounding_factor * 2));
+final_length = (tile_length - (rounding_factor * 2));
 
 //Write the text
 
@@ -38,27 +41,27 @@ module letter(l) {
 }
 
 
-text_height = (tile_length - letter_size);
-text_centre = (tile_width / 2);
+text_height = (final_length - letter_size);
+text_centre = (final_width / 2);
 
-translate([text_height,text_centre,0]) rotate([0,0,90]) letter(text);
+translate([text_height,text_centre,tile_height]) rotate([0,0,90]) letter(text);
 
 
 
 // Make the Tile
 
-margin_length_offset = (tile_length - (margin * 2));
-margin_width_offset = (tile_width - (margin * 2));
+margin_length_offset = (final_length - (margin * 2));
+margin_width_offset = (final_width - (margin * 2));
 margin_height_offset = (margin_height / 2);
-mag_x_pos = (tile_width / 2);
-mag_y_pos = (tile_length /2);
+mag_x_pos = (final_width / 2);
+mag_y_pos = (final_length /2);
 mag_radius = (mag_diameter /2);
 
 difference () {
     minkowski() {
-        cube([tile_length,tile_width,tile_height]);
+        cube([final_length,final_width,tile_height]);
         // rounded corners
-        cylinder(r=rounding_factor,h=rounding_factor);
+        cylinder(r=rounding_factor,h=letter_height);
     }
     translate([mag_y_pos,mag_x_pos,0]) {
       if (magnet) cylinder(r=mag_radius,h=mag_height);
@@ -69,7 +72,7 @@ difference () {
         minkowski() {
             cube([margin_length_offset,margin_width_offset,margin_height_offset]);
             // rounded corners
-            cylinder(r=rounding_factor,h=rounding_factor);
+            cylinder(r=rounding_factor,h=letter_height);
         }
         
 
@@ -89,13 +92,13 @@ module pyramidChildren(height){
  }
  
  
- icon_y_pos = ((tile_length - letter_size) /2);
- icon_x_pos = (tile_width /2);
- icon_resize = ((tile_length * 1.25)/2);
- 
+ icon_y_pos = ((final_length - letter_size) /2);
+ icon_x_pos = (final_width /2);
+ icon_resize = ((final_length * 1.25)/2);
+
  difference () {
  
-    translate([icon_y_pos,icon_x_pos,0]) rotate([0,0,90]) resize([icon_resize,0,    letter_height], auto=true) {
+    translate([icon_y_pos,icon_x_pos,tile_height]) rotate([0,0,90]) resize([icon_resize,0,    letter_height], auto=true) {
         pyramidChildren(letter_height)
         import(file = source_svg, center = true, dpi = 96);
     }
