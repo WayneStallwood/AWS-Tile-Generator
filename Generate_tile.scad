@@ -15,7 +15,7 @@ rounding_factor = 2;
 //Magnet options, for use on fridge or magnetic whiteboards
 
 magnet = true;
-mag_height = 1;
+mag_height = 1.2;
 mag_diameter = 8.5;
 
 
