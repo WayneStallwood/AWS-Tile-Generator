@@ -2,10 +2,10 @@
 
 //Define variables here 
 
-source_svg = "/path/to/icon/here.svg";
-text = "DynamoDB";
-tile_length = 45;
-tile_width = 35;
+source_svg = "/path/to/icons/Glue_64.svg";
+text = "Glue";
+tile_length = 50;
+tile_width = 40;
 tile_height = 3;
 margin = 1 ;
 margin_height = tile_height;
@@ -24,7 +24,7 @@ $fn=50;
 font = "Liberation Sans";
 
 letter_size = 4;
-letter_height = 1.5;
+letter_height = 1;
 
 // Round corners alter dimensions
 final_width  = (tile_width - (rounding_factor * 2));
