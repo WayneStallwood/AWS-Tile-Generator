@@ -30,6 +30,9 @@ VPN,rch_AWS-Site-to-Site-VPN_64.svg,Purple_
 PrivateLink,Arch_AWS-PrivateLink_64.svg,Purple_
 DX,Arch_AWS-Direct-Connect_64.svg,Purple_
 CloudWAN,Arch_AWS-Cloud-WAN_64.svg,Purple_
+Lake-F,Arch_AWS-Lake-Formation_64.svg,Purple_
+Athena,Arch_Amazon-Athena_64.svg,Purple_
+EMR,Arch_Amazon-EMR_64.svg,Purple_
 IAM,Arch_AWS-Identity-and-Access-Management_64.svg,Red_
 KMS,Arch_AWS-Key-Management-Service_64.svg,Red_
 Directory,Arch_AWS-Directory-Service_64.svg,Red_
