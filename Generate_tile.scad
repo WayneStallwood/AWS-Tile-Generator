@@ -1,8 +1,8 @@
-// AWS Tile Maker  W Stallwood - ObjectifyD
+// AWS Tile Maker  W Stallwood - ObjectifyD.xyz
 
 //Define variables here 
 
-source_svg = "/Users/wstallwood/Desktop/test.svg";
+source_svg = "/path/to/icon/here.svg";
 text = "DynamoDB";
 tile_length = 45;
 tile_width = 35;
@@ -24,7 +24,7 @@ $fn=50;
 font = "Liberation Sans";
 
 letter_size = 4;
-letter_height = 2;
+letter_height = 1.5;
 
 // Round corners alter dimensions
 final_width  = (tile_width - (rounding_factor * 2));
