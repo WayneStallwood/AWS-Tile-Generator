@@ -21,9 +21,10 @@ mag_diameter = 8.5;
 
 $fn=50;
 
-font = "Liberation Sans";
+//font = "Liberation Sans";
+font = "Amazon Ember";
 
-letter_size = 4;
+letter_size = 4.5;
 letter_height = 1;
 
 // Round corners alter dimensions

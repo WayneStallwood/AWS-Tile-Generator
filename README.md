@@ -2,6 +2,14 @@
 Simple 3D Tile Generator for AWS Service Icons using OpenSCAD
 
 
+# Important Update
+
+I've now changed to use the correct Amazon Ember Font, All Samples have been regenerated with this font and other minor fixes to make them easier to print with a 0.4mm nozzle.
+
+The generator also defaults to this font, you must install the ttf in this repo to your system before running it, or alternatively comment out the new Font line in Generate_tile.scad and uncomment the previous one which uses a default system font.
+
+The Ember font is provided free for use under different terms to the overall licence for this repo, please see the Licence details in the font file.
+
 # Usage
 
 The most common icons are already generated in the "samples" directory, note these have the new magnet hole option (8x1mm round magnet), regenerate with the instructions below if you don't want that. or for a missing service. See tile_list.csv for the samples included.
